@@ -42,5 +42,6 @@ for f in os.listdir(f"unknown_faces"):
             cv2.putText(img, match, (loc[3]+10, loc[3]+15),
                                      cv2.FONT_HERSHEY_SIMPLEX, 
                                      0.5, (200, 200, 200), 2)
-    cv2.imshow(f, img)
+    cv2.namedWindow('image',cv2.WINDOW_NORMAL)
+    cv2.imshow('image', img)
     cv2.waitKey(10000)
