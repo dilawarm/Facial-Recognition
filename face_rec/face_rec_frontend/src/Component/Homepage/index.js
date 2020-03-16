@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from 'react-bootstrap/Button';
 
 import axios from "axios";
 
@@ -27,8 +28,8 @@ export default class Homepage extends Component {
     render() {
         return(
             <div>
-                <h1>Options</h1>
-                    {this.state.options.map((value, index) => {return <h4 key={index}>{value}</h4>})}
+                <h1>Options idiot</h1>
+                    {this.state.options.map((value, index) => {return <Button key={index} variant="primary">{value}</Button>})}
             </div>
         )
     }

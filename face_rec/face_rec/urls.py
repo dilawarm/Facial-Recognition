@@ -16,8 +16,11 @@ Including another URLconf
 from django.urls import path, include
 from api.views import homepage
 from core.views import index
+from django.contrib import admin
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('homepage/', homepage, name="homepage"),
     path("", index, name="index"),
+    path("api/", include('api.urls')),
 ]
