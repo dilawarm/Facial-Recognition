@@ -1,10 +1,10 @@
 import face_recognition
 import os
 import cv2
+import numpy as np
 
 tol = 0.6 # The lower the tolerance, the lower the chance for false positives.
 model = "cnn" # Better for training on the cpu. Can also use "cnn".
-video = cv2.VideoCapture(2)
 
 # Loading in the known faces
 known_faces = []
@@ -18,10 +18,13 @@ for id in os.listdir("known_faces"):
         known_identities.append(id)
 
 # Loading in the unkown faces
-while True:
-    r, img = video.read()
+for f in os.listdir(f"unknown_faces"):
+    print(f)
+    img = face_recognition.load_image_file(f"unknown_faces/{f}")
+    height, width, channels = img.shape
     face_locs = face_recognition.face_locations(img, model=model)
     img_encodings = face_recognition.face_encodings(img, face_locs)
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
     for encoding, loc in zip(img_encodings, face_locs):
         res = face_recognition.compare_faces(known_faces, encoding, tol)
@@ -40,7 +43,8 @@ while True:
             cv2.rectangle(img, t_l, b_r, [0, 255, 0], cv2.FILLED)
             cv2.putText(img, match, (loc[3]+10, loc[2]+15),
                                      cv2.FONT_HERSHEY_SIMPLEX, 
-                                     0.5, (200, 200, 200), 2)
-    cv2.imshow(f, img)
-    if cv2.waitKey(1) & 0xFF == ord("q"):
-        break
+                                     0.75, (0, 0, 0), 2)
+    cv2.namedWindow('image',cv2.WINDOW_NORMAL)
+    cv2.resizeWindow('image', width, height)
+    cv2.imshow('image', img)
+    cv2.waitKey(10000)
