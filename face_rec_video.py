@@ -38,7 +38,7 @@ while True:
             t_l = (loc[3], loc[2])
             b_r = (loc[1], loc[2]+22)
             cv2.rectangle(img, t_l, b_r, [0, 255, 0], cv2.FILLED)
-            cv2.putText(img, match, (loc[3]+10, loc[3]+15),
+            cv2.putText(img, match, (loc[3]+10, loc[2]+15),
                                      cv2.FONT_HERSHEY_SIMPLEX, 
                                      0.5, (200, 200, 200), 2)
     cv2.imshow(f, img)
