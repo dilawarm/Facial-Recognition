@@ -15,6 +15,7 @@ class IdentityView(APIView):
         return Response(serializer.data)
 
     def post(self, request, *args, **kwargs):
+        print(request.data["image"])
         posts_serializer = IdentitySerializer(data=request.data)
         if posts_serializer.is_valid():
             posts_serializer.save()

@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <Route path="/" exact component={Homepage} />
-        <Route path="/createIdentity" exact component={createIdentity} />
+        <Route path="/createidentity" exact component={createIdentity} />
       </Router>
     );
   }
