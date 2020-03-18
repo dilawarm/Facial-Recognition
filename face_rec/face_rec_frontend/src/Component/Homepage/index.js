@@ -19,7 +19,7 @@ export default class Homepage extends Component {
     async loadOptions() {
         const promise = await axios.get("http://localhost:8000/homepage/");
         const status = promise.status;
-        if (status == 200) {
+        if (status === 200) {
             const data = promise.data.data;
             this.setState({options: data});
         }
