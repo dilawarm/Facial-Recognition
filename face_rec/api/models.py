@@ -6,3 +6,6 @@ class Identity(models.Model):
 
     def __str__(self):
         return self.name
+
+class Upload(models.Model):
+    image = models.ImageField(upload_to='upload_images')
