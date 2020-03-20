@@ -3,12 +3,15 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
+import Spinner from 'react-bootstrap/Spinner';
+import Col from 'react-bootstrap/Col';
 
 export default class findIdentity extends Component {
 
   state = {
     image: null,
-    result: null
+    result: null,
+    waiting: false,
   };
 
   handleChange = (e) => {
@@ -26,6 +29,9 @@ export default class findIdentity extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    this.state.waiting = true;
+    this.forceUpdate();
+    this.state.waiting = false;
     let form_data = new FormData();
     let extension = this.state.image.name.split(".")[1];
     let filename = this.state.image.name.split(".")[0];
@@ -47,7 +53,14 @@ export default class findIdentity extends Component {
   };
 
   render() {
-    if (!this.state.result) {
+    if (this.state.waiting) {
+      return (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      );
+    }
+    else if (!this.state.result) {
       return (
         <div className="App">
             <Form>
@@ -64,7 +77,9 @@ export default class findIdentity extends Component {
       console.log("HEISANN!!!");
       return (
         <div className="App">
+        <Col xs={8} md={5}>
           <Image src={"ai_output/"+this.state.result} fluid/>
+        </Col>
         </div>
       );
     }

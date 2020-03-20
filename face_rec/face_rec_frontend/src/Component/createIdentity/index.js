@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Alert from '../../widgets';
 
 export default class createIdentity extends Component {
 
@@ -40,6 +41,7 @@ export default class createIdentity extends Component {
     })
         .then(res => {
           console.log(res.data);
+          Alert.success("Identity uploaded!");
         })
         .catch(err => console.log(err))
   };

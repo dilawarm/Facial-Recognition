@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
 
 import axios from "axios";
+import { createHashHistory } from 'history';
+
+const history = createHashHistory();
 
 export default class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = {
         options:[],
+        links: ["/createidentity", "/findidentity"],
         };
         this.loadOptions = this.loadOptions.bind(this);
     }
@@ -29,7 +33,7 @@ export default class Homepage extends Component {
         return(
             <div>
                 <h1>Options idiot</h1>
-                    {this.state.options.map((value, index) => {return <Button key={index} variant="primary">{value}</Button>})}
+                    {this.state.options.map((value, index) => {return <Button key={index} variant="primary" onClick={() => history.push(this.state.links[index])}>{value}</Button>})}
             </div>
         )
     }
