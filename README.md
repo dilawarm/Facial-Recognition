@@ -7,6 +7,8 @@ And here's my favorite mathematician :) :) :
 ### How to run
 ```
 git clone https://github.com/dilawarm/Facial-Recognition.git
-cd Facial-Recognition/face_rec && python3 manage.py runserver
+cd Facial-Recognition
+pip install -r requirements.txt
+cd face_rec && python manage.py runserver
 cd face_rec_frontend && npm start
 ```
