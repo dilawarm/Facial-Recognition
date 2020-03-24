@@ -31,7 +31,6 @@ export default class findIdentity extends Component {
     console.log(this.state);
     this.state.waiting = true;
     this.forceUpdate();
-    this.state.waiting = false;
     let form_data = new FormData();
     let extension = this.state.image.name.split(".")[1];
     let filename = this.state.image.name.split(".")[0];
@@ -47,6 +46,7 @@ export default class findIdentity extends Component {
           console.log(res.data);
           this.state.result = res.data.image.split("/media/upload_images/")[1];
           console.log(this.state.result);
+          this.state.waiting = false;
           this.forceUpdate();
         })
         .catch(err => console.log(err))
@@ -74,9 +74,9 @@ export default class findIdentity extends Component {
         </div>
       );
     } else {
-      console.log("HEISANN!!!");
       return (
         <div className="App">
+        <h1>Result</h1>
         <Col xs={8} md={5}>
           <Image src={"ai_output/"+this.state.result} fluid/>
         </Col>

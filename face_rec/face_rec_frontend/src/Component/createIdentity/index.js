@@ -42,6 +42,7 @@ export default class createIdentity extends Component {
         .then(res => {
           console.log(res.data);
           Alert.success("Identity uploaded!");
+          history
         })
         .catch(err => console.log(err))
   };

@@ -32,7 +32,7 @@ export default class Homepage extends Component {
     render() {
         return(
             <div>
-                <h1>Options idiot</h1>
+                <h1>Homepage</h1>
                     {this.state.options.map((value, index) => {return <Button key={index} variant="primary" onClick={() => history.push(this.state.links[index])}>{value}</Button>})}
             </div>
         )
