@@ -10,5 +10,6 @@ git clone https://github.com/dilawarm/Facial-Recognition.git
 cd Facial-Recognition
 pip install -r requirements.txt
 cd face_rec && python manage.py runserver
-cd face_rec_frontend && npm start
+cd face_rec_frontend && npm install
+npm start
 ```
