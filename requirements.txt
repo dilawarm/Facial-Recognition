@@ -19,7 +19,7 @@ django-cors-headers==3.2.1
 django-js-asset==1.2.2
 django-materializecss-form==1.1.17
 django-tinymce==2.8.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 dlib==19.19.0
 dlx==1.0.4
 docker==4.2.0
