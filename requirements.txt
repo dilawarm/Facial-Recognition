@@ -102,7 +102,7 @@ pyscf==1.6.5
 pytest==5.2.1
 python-dateutil==2.8.1
 pytz==2019.3
-PyYAML==5.1.2
+PyYAML==5.4
 pyzmq==18.1.1
 qiskit==0.14.0
 qiskit-aer==0.3.4
