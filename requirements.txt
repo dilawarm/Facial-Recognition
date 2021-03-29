@@ -94,7 +94,7 @@ py==1.8.0
 pyasn1==0.4.8
 pydot==1.4.1
 pygame==1.9.6
-Pygments==2.5.2
+Pygments==2.7.4
 pyOpenSSL==19.1.0
 pyparsing==2.4.6
 pyrsistent==0.15.4
