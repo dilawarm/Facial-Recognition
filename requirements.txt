@@ -90,7 +90,7 @@ prompt-toolkit==3.0.2
 protobuf==3.11.2
 psutil==5.6.7
 ptyprocess==0.6.0
-py==1.8.0
+py==1.10.0
 pyasn1==0.4.8
 pydot==1.4.1
 pygame==1.9.6
