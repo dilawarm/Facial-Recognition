@@ -123,7 +123,7 @@ sqlparse==0.3.1
 tabulate==0.8.6
 tb-nightly==1.14.0a20190603
 tensorboard==1.14.0
-tensorflow==2.0.0b1
+tensorflow==2.5.3
 tensorflow-estimator==1.14.0
 termcolor==1.1.0
 terminado==0.8.3
