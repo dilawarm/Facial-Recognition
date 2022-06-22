@@ -71,7 +71,7 @@ nbformat==4.4.0
 ndg-httpsclient==0.5.1
 nltk==3.4.5
 notebook==6.0.2
-numpy==1.18.2
+numpy==1.22.0
 opencv-python==4.2.0.32
 packaging==19.2
 pandas==1.0.1
